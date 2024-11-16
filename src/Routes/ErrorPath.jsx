@@ -10,9 +10,11 @@ const ErrorPath = () => {
     <NavBar />
 
     <Container>
-    <Box sx={{minHeight: 'calc(100vh - 130px)', border: '1px solid red'}}>
-        <Typography>Page {location.pathname} does not found</Typography>
-        <Link to='/'>Go Home</Link>
+    <Box sx={{minHeight: 'calc(100vh - 130px)', 
+      display: 'flex', alignItems: 'center', flexDirection: 'column', gap: 3,
+      py: 3, boxSizing: 'border-box'}}>
+        <Typography variant='h3' align='center' color='#00897b'>Error 404: Page '{location.pathname}' not found </Typography>
+        <Link to='/' style={{textDecoration: 'none'}}><Typography variant='h4'>Back Home</Typography></Link>
     </Box>
     </Container>
     <Footer />

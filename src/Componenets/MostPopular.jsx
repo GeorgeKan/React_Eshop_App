@@ -1,4 +1,4 @@
-import { Divider, Typography, Stack } from "@mui/material"
+import { Divider, Typography } from "@mui/material"
 import Grid from '@mui/material/Grid2';
 import ProductCard from "./ProductCard"
 

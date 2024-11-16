@@ -1,6 +1,6 @@
 import {Paper, Stack, Typography, Rating, Button, IconButton} from '@mui/material'
 import Grid from '@mui/material/Grid2';
-import InfoIcon from '@mui/icons-material/Info';
+import { CgMore } from "react-icons/cg";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const ProductCard = ({size}) => {
@@ -19,7 +19,7 @@ const ProductCard = ({size}) => {
         </Stack>
         <Typography variant='body2' sx={{px: 1, py: 1}}>{desc.length > 2120 ? desc.substring(0,120) + '...' : desc}</Typography>
         <Stack direction={'row'} sx={{justifyContent: 'center', my: 2}} spacing={3}>
-        <IconButton sx={{color: '#719BA9'}}><InfoIcon sx={{fontSize: 30}}/></IconButton>
+        <IconButton sx={{color: '#719BA9'}}><CgMore sx={{fontSize: 30}}/></IconButton>
         <IconButton sx={{color: '#719BA9'}}><AddShoppingCartIcon sx={{fontSize: 30}} /></IconButton>
         </Stack>
       </Stack>
