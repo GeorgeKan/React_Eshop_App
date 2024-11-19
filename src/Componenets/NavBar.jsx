@@ -29,7 +29,7 @@ const NavBar = () => {
             <Stack direction={'row'} spacing={2} sx={{flexGrow: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Button color="inherit" startIcon={<HomeIcon />} onClick={() => navigate('/')}>Home</Button>
             <Button color="inherit" startIcon={<RedeemIcon />} onClick={() => navigate('/collection')}>Collection</Button>
-            <Button color="inherit" startIcon={<InfoIcon />} onClick={() => navigate('/contact')}>About</Button>
+            <Button color="inherit" startIcon={<InfoIcon />} onClick={() => navigate('/about')}>About</Button>
             <Button color="inherit" startIcon={<AlternateEmailIcon />} onClick={() => navigate('/contact')}>Contact Us</Button>
             </Stack>
             <Stack direction={'row'} spacing={2} sx={{ alignItems: 'center', justifyContent: 'center'}}>

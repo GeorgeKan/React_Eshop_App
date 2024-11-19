@@ -11,6 +11,7 @@ import Login from './Routes/Login.jsx'
 import ErrorPath from './Routes/ErrorPath.jsx'
 import Register from './Routes/Register.jsx'
 import ContactUs from './Routes/ContactUs.jsx'
+import About from './Routes/About.jsx'
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
   {
     path: 'contact',
     element: <ContactUs />
+  },
+  {
+    path: '/about',
+    element: <About />
   }
 ])
 
