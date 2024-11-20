@@ -6,8 +6,6 @@ import Footer from './Componenets/Footer'
 import Policies from "./Componenets/Policies"
 
 function App() {
-  
-
   return (
     <>
     <NavBar />

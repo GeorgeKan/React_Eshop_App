@@ -8,7 +8,7 @@ const Register = () => {
   return (
     <>
     <NavBar />
-    <Box sx={{height: 'calc(100vh - 170px)', boxSizing: 'border-box'}}>
+    <Box sx={{minHeight: 'calc(100vh - 180px)', boxSizing: 'border-box'}}>
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', my: 5}}>
         <Paper elevation={10} sx={{p: 3}}>
             <Stack direction={'column'}>

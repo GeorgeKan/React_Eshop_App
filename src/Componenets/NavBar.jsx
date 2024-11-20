@@ -8,11 +8,10 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import InfoIcon from '@mui/icons-material/Info';
-import LogoutIcon from '@mui/icons-material/Logout';
 
 const NavBar = () => {
     const navigate = useNavigate()
-    const login = false
+    const login = true
     
     const [ancorEl, setAnchorEl] = useState(null)
     const open = Boolean(ancorEl)

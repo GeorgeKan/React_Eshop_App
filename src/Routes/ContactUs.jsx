@@ -10,7 +10,7 @@ const ContactUs = () => {
     <>
     <NavBar />
     <Container>
-    <Box sx={{height: 'calc(100vh - 175px)', boxSizing: 'border-box', my: 3}}>
+    <Box sx={{minHeight: 'calc(100vh - 180px)', boxSizing: 'border-box', my: 3}}>
         <Typography align='center' variant='h4' sx={{fontWeight: '400', mb: 4}}>CONTACT US</Typography>
         <Grid container spacing={2}>
             <Grid size='grow'>

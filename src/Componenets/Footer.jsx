@@ -9,7 +9,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 const Footer = () => {
   return (
     <Paper elevation={3} sx={{px: 3}}>
-        
         <Grid container spacing={2}>
             <Grid size={4}>
             <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: 1}}>
@@ -29,9 +28,7 @@ const Footer = () => {
 <FacebookIcon /><XIcon /><LinkedInIcon /><InstagramIcon />
             </Stack>
         </Grid>
-
         </Grid>
-    
     </Paper>
   )
 }

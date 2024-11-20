@@ -2,13 +2,14 @@ import {Container, Typography, Box, Rating, IconButton, Button } from '@mui/mate
 import Grid from '@mui/material/Grid2';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import NavBar from '../Componenets/NavBar'
+import Footer from '../Componenets/Footer'
 
 const ProductInfo = () => {
   return (
     <>
     <NavBar />
     <Container >
-    <Grid container spacing={2} sx={{py: 5}}>
+    <Grid container spacing={2} sx={{minHeight: 'calc(100vh - 130px)', boxSizing: 'border-box', py: 5}}>
         <Grid size={3}>
             <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid black'}}>
         <img src='https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/thumbnail.png' />
@@ -32,13 +33,13 @@ const ProductInfo = () => {
           <Typography>The Women's Wrist Watch is a versatile and fashionable timepiece for everyday wear. With a comfortable strap and a simple yet elegant design, it complements various styles.</Typography>
         </Box>
         <Box sx={{display: 'flex', alignItems: 'center', gap: 3}}>
-        <input type="number" style={{paddingLeft: 3, width: '35px', height: '25px', borderRadius: 5}} value={1} min={1} max={5} />
-        {/* <IconButton sx={{color: '#719BA9'}}><AddShoppingCartIcon sx={{fontSize: 30}} /></IconButton> */}
+        <input type="number" style={{paddingLeft: 3, width: '35px', height: '25px', borderRadius: 5}} min={1} max={5} />
         <Button startIcon={<AddShoppingCartIcon />}>Add to Cart</Button>
         </Box>
         </Grid>
     </Grid>
     </Container >
+    <Footer />
     </>
   )
 }

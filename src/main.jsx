@@ -12,6 +12,9 @@ import ErrorPath from './Routes/ErrorPath.jsx'
 import Register from './Routes/Register.jsx'
 import ContactUs from './Routes/ContactUs.jsx'
 import About from './Routes/About.jsx'
+import Cart from './Routes/Cart.jsx';
+import Checkout from './Routes/Checkout.jsx';
+
 
 const routes = createBrowserRouter([
   {
@@ -20,7 +23,7 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPath />
   },
   {
-    path: '/product',
+    path: '/product/:id',
     element: <ProductInfo />
   },
   {
@@ -32,6 +35,14 @@ const routes = createBrowserRouter([
         element: <Collection />
       }
     ]
+  },
+  {
+    path: '/cart',
+    element: <Cart />
+  },
+  {
+    path: '/checkout',
+    element: <Checkout />
   },
   {
     path: '/login',

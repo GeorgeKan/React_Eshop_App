@@ -23,7 +23,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/beauty')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <PiEyedropperFill style={{marginBottom: 16, fontSize: 30, color: '#00897b'}} />
-            <Typography variant="h6" align="center" color="#009688">Cosmetics</Typography>
+            <Typography variant="h6" align="center">Cosmetics</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -31,7 +31,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/fragrances')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <GiDelicatePerfume style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Fragrances</Typography>
+            <Typography variant="h6" align="center">Fragrances</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -39,7 +39,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/womens-jewellery')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <GiBigDiamondRing style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Womens Jewellery</Typography>
+            <Typography variant="h6" align="center">Womens Jewellery</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -47,7 +47,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/womens-dresses')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <PiDressFill style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Womens Dresses</Typography>
+            <Typography variant="h6" align="center">Womens Dresses</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -55,7 +55,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/womens-watches')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <FiWatch style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Womens Watches</Typography>
+            <Typography variant="h6" align="center">Womens Watches</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -63,7 +63,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/womens-bags')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <FaShoppingBag style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Womens Bags</Typography>
+            <Typography variant="h6" align="center">Womens Bags</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -71,7 +71,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/womens-shoes')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <GiWalkingBoot style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Womens Shoes</Typography>
+            <Typography variant="h6" align="center">Womens Shoes</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -79,7 +79,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/mens-shirts')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <PiShirtFoldedFill style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Mens Shirts</Typography>
+            <Typography variant="h6" align="center">Mens Shirts</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -87,7 +87,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/mens-watches')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <MdWatch style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Mens Watches</Typography>
+            <Typography variant="h6" align="center">Mens Watches</Typography>
             </Stack>
         </Paper>
         </Grid>
@@ -95,7 +95,7 @@ const CategoriesBanner = () => {
         <Paper elevation={5} sx={{p: 5, cursor: 'pointer'}} square onClick={() => navigate('/collection/mens-shoes')}>
             <Stack direction={'column'} sx={{alignItems: 'center'}}>
             <GiSteeltoeBoots style={{marginBottom: 16, fontSize: 30, color: '#00897b'}}/>
-            <Typography variant="h6" align="center" color="#009688">Mens Shoes</Typography>
+            <Typography variant="h6" align="center">Mens Shoes</Typography>
             </Stack>
         </Paper>
         </Grid>
