@@ -1,20 +1,77 @@
 import { create } from 'zustand';
 import { Query } from 'appwrite';
 import { db, ID } from '../utils/appwriteConfig.js';
-import { FlashOnRounded } from '@mui/icons-material';
-import { SiTruenas } from 'react-icons/si';
 
 const dbID = '672e83fb002462e2866e';
 const productsID = '672f2e48000001875417';
 const categoriesID = '672f1592000d8f8b1c98';
 const usersID = '672f3942000ec2e792ff';
 
+const findProductById = (pid) =>
+  useProductsStore.getState().products.find((p) => p.$id == pid);
+
+const findCartIndex = (pid) =>
+  useCartStore.getState().cart.findIndex((c) => c.product.$id == pid);
+
+export const useCartStore = create((set, get) => ({
+  cart: [],
+  changeTemaxia: (pid, amount) => {
+    const product = findProductById(pid);
+    if (product) {
+      const index = findCartIndex(product.$id);
+      if (index >= 0) {
+        set((s) => ({
+          cart: s.cart.map((c) =>
+            c.product.$id == pid ? { ...c, temaxia: amount } : c
+          ),
+        }));
+      }
+    }
+  },
+  deleteFromCart: (pid) => {
+    const product = findProductById(pid);
+    if (product) {
+      const index = findCartIndex(product.$id);
+      if (index >= 0) {
+        set((s) => ({
+          cart: s.cart.filter((c) => c.product.$id != product.$id),
+        }));
+      }
+    }
+  },
+  addToCart: (pid, temaxia) => {
+    const tem = parseInt(temaxia);
+    const product = findProductById(pid);
+    if (product) {
+      const index = findCartIndex(product.$id);
+      if (index >= 0) {
+        set((s) => ({
+          cart: s.cart.map((c) =>
+            c.product.$id == product.$id
+              ? { ...c, temaxia: c.temaxia + tem }
+              : c
+          ),
+        }));
+      } else {
+        const cartItem = { product: product, temaxia: tem };
+        set((s) => ({
+          cart: [...s.cart, cartItem],
+        }));
+      }
+    }
+  },
+}));
+
+
 export const useUserStore = create((set) => ({
   name: '',
   email: '',
   isLogin: false,
-  error: 'ok',
+  error: '',
   registered: false,
+  logOut: () => {
+    set({isLogin: false, error: '', name: '', email: ''})
+  },
   registerUser: async (name, email, password) => {
     const res = await db.createDocument(dbID, usersID, ID.unique(), {
       name,
@@ -25,8 +82,8 @@ export const useUserStore = create((set) => ({
       set({
         name: res.name,
         email: res.email,
-        isLogin: true,
-        error: 'Wrong Email or Password',
+        isLogin: false,
+        error: '',
         registered: false
       });
     } else {
@@ -38,7 +95,7 @@ export const useUserStore = create((set) => ({
       Query.and([Query.equal('email', email), Query.equal('password', passwd)]),
     ]);
     if (res.total == 0) {
-      set({ error: 'Wrong Email or Password', isLogin: false });
+      set({ error: 'Wrong Email or Password. Try Again', isLogin: false });
     } else {
       set((s) => ({
         ...s,

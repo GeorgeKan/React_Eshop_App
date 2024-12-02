@@ -13,6 +13,7 @@ import { GiWalkingBoot } from "react-icons/gi";
 import { GiSteeltoeBoots } from "react-icons/gi";
 import { PiShirtFoldedFill } from "react-icons/pi";
 import {useProductsStore} from '../store/store'
+import { ToastContainer } from 'react-toastify';
 import NavBar from '../Componenets/NavBar'
 import Footer from '../Componenets/Footer'
 import ProductCard from '../Componenets/ProductCard'
@@ -124,6 +125,7 @@ const  Collection = () => {
       </Grid>}
 
     </Grid>
+    <ToastContainer />
     <Footer />
     </>
   )

@@ -85,7 +85,8 @@ const Register = () => {
     </Box>
     <Box sx={{ display: 'flex', justifyContent: 'center'}}>
       {error && <Alert severity='error'><AlertTitle>Registration Error</AlertTitle>{error}</Alert>}
-      {isLogin && <Alert severity={registered ? "success" : "info"} sx={{px: 5}}><AlertTitle>{registered ? "Success" : "Already Registered"}</AlertTitle>
+      {isLogin && <Alert severity={registered ? "success" : "info"} sx={{px: 5}}>
+        <AlertTitle>{registered ? "Success" : "Already Registered"}</AlertTitle>
     {registered ? "Regitration Completed Successfuly" : "You are already registered"}
     <Button size="small" color='inxerit' variant='contained' startIcon={<ShoppingCartCheckoutIcon/>} 
     sx={{ml: 5}} onClick={() => navigate('/')}>

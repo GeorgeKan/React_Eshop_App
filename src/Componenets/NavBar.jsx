@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { AppBar, Badge, Button, IconButton, Stack, Toolbar, Typography, Menu, MenuItem } from "@mui/material"
 import {useNavigate} from 'react-router-dom'
+import {useUserStore, useCartStore} from '../store/store'
 import DiamondIcon from '@mui/icons-material/Diamond';
 import HomeIcon from '@mui/icons-material/Home';
 import RedeemIcon from '@mui/icons-material/Redeem';
@@ -11,7 +12,8 @@ import InfoIcon from '@mui/icons-material/Info';
 
 const NavBar = () => {
     const navigate = useNavigate()
-    const login = true
+    const {name, isLogin, logOut} = useUserStore()
+    const {cart} = useCartStore()
     
     const [ancorEl, setAnchorEl] = useState(null)
     const open = Boolean(ancorEl)
@@ -39,13 +41,13 @@ const NavBar = () => {
             onClick={(e) => setAnchorEl(e.currentTarget)}>
                 <PersonOutlineIcon />
             </IconButton>
-            <Badge badgeContent={4} color="inherit">
+            <Badge badgeContent={cart.length} color="inherit">
             <IconButton size="small" edge="start" color="inherit" onClick={() => navigate('/cart')}>
                 <ShoppingBasketIcon size='large' />
                     </IconButton>
             </Badge>
             </Stack>
-            {login ? <Menu id='user-auth-menu' anchorEl={ancorEl} open={open} MenuListProps={{
+            {!isLogin ? <Menu id='user-auth-menu' anchorEl={ancorEl} open={open} MenuListProps={{
                 'aria-labelledby': 'user-auth-button'
             }} onClose={() => setAnchorEl(null)}
             anchorOrigin={{
@@ -71,8 +73,8 @@ const NavBar = () => {
                 horizontal: 'right'
             }}
             >
-            <MenuItem divider>George Kanellos</MenuItem>
-            <MenuItem>Log out</MenuItem>    
+            <MenuItem divider>{name}</MenuItem>
+            <MenuItem onClick={() => logOut()}>Log out</MenuItem>    
             </Menu>}
         </Toolbar>
     </AppBar>
