@@ -2,6 +2,7 @@ import {Container, Box, Typography, Stack, Divider, Button} from '@mui/material'
 import Grid from '@mui/material/Grid2';
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import {useNavigate} from 'react-router-dom'
+import {useCartStore} from '../store/store'
 import NavBar from '../Componenets/NavBar'
 import Footer from '../Componenets/Footer'
 import CartProduct from '../Componenets/CartProduct'
@@ -9,7 +10,8 @@ import CartTotals from '../Componenets/CartTotals'
 
 const Cart = () => {
   const navigate = useNavigate()
-  
+  const {cart} = useCartStore()
+
   return (
     <>
     <NavBar />
@@ -18,10 +20,7 @@ const Cart = () => {
     <Typography align='left' variant='h5' sx={{fontWeight: '500', mb: 4}}>YOUR CART</Typography>
     <Divider orientation="horizontal" flexItem />
     <Stack spacing={2}  divider={<Divider orientation="horizontal" flexItem />}>
-        <CartProduct />
-        <CartProduct />
-        <CartProduct />
-        
+        {cart.map((c, i) => <CartProduct key={i} item={c}/>)} 
     </Stack>
     <Divider orientation="horizontal" flexItem sx={{mb: 3}} />
     <Grid container>
