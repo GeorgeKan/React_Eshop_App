@@ -22,13 +22,11 @@ const  Collection = () => {
   const {id} = useParams()
   const navigate = useNavigate()
   const { products, categories, getProducts, loading } = useProductsStore();
-  // const [category, setCategory] = useState('beauty')
 
   useEffect(() => {
     if (products.length == 0 || categories.length == 0) {
       getProducts();
     }
-    // setCategory(id ? id : 'beauty')
   }, [products]);
 
   const filteredProducts = () => {

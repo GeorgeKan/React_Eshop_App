@@ -46,10 +46,12 @@ const Login = () => {
             label='Email'  sx={{width: '400px', my: 3}}/>
             <TextField disabled={isLogin} type='password' name='password' label='Password' />
             <Box sx={{display: 'flex', justifyContent: 'center', mt: 3, mb: 1}}>
-            <Button disabled={isLogin} type='submit' endIcon={<PersonIcon />} variant='outlined' sx={{width: '40%'}}>Login</Button>
+            <Button disabled={isLogin} type='submit' endIcon={<PersonIcon />} variant='outlined' 
+            sx={{width: '40%'}}>Login</Button>
             </Box>
             <Box sx={{mt: 2}}>
-              <Typography align='center'>Don't Have an Account? <Link to='/register' style={{textDecoration: 'none'}}>Register now</Link></Typography>
+              <Typography align='center'>Don't Have an Account? 
+                <Link to='/register' style={{textDecoration: 'none'}}>Register now</Link></Typography>
             </Box>
             </Stack>
             </form>

@@ -2,15 +2,17 @@ import {Container, Box, Typography, Stack, Divider, Button} from '@mui/material'
 import Grid from '@mui/material/Grid2';
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import {useNavigate} from 'react-router-dom'
-import {useCartStore} from '../store/store'
+import {useCartStore, useUserStore} from '../store/store'
 import NavBar from '../Componenets/NavBar'
 import Footer from '../Componenets/Footer'
 import CartProduct from '../Componenets/CartProduct'
 import CartTotals from '../Componenets/CartTotals'
+import PersonIcon from '@mui/icons-material/Person';
 
 const Cart = () => {
   const navigate = useNavigate()
   const {cart} = useCartStore()
+  const {isLogin} = useUserStore()
 
   return (
     <>
@@ -29,7 +31,11 @@ const Cart = () => {
       </Grid>
           <Grid size={5} offset={7}>
           <Box sx={{display: 'flex', justifyContent: 'flex-end', width: 1, my: 3}}>
-          <Button variant='outlined' endIcon={<MdOutlineShoppingCartCheckout />} onClick={() => navigate('/checkout')}>PROCEED TO CHECKOUT</Button>
+          {isLogin ?
+          <Button variant='outlined' endIcon={<MdOutlineShoppingCartCheckout />} 
+          onClick={() => navigate('/checkout')}>PROCEED TO CHECKOUT</Button>
+          : <Button variant='outlined' endIcon={<PersonIcon />} 
+          onClick={() => navigate('/login')}>LOGIN TO CHECKOUT</Button>}
           </Box>
       </Grid>
     </Grid>
