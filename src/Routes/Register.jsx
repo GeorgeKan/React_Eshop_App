@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Box, Paper, Typography, TextField, Stack, Button, Alert, AlertTitle} from '@mui/material'
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import {Link,useNavigate} from 'react-router-dom'
@@ -54,8 +54,6 @@ const Register = () => {
     await registerUser(data.name, data.email, data.passwd)
     }
   }
-
-
 
   return (
     <>

@@ -82,12 +82,12 @@ export const useUserStore = create((set) => ({
       set({
         name: res.name,
         email: res.email,
-        isLogin: false,
+        isLogin: true,
         error: '',
-        registered: false
+        registered: true
       });
     } else {
-      set({ error: 'Somthing went wrong. Try Again', isLogin: flase, registered: false });
+      set({ error: 'Somthing went wrong. Try Again', isLogin: false, registered: false });
     }
   },
   loginUser: async (email, passwd) => {
