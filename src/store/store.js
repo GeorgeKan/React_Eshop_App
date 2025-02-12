@@ -22,7 +22,7 @@ export const useCartStore = create((set, get) => ({
       if (index >= 0) {
         set((s) => ({
           cart: s.cart.map((c) =>
-            c.product.$id == pid ? { ...c, temaxia: amount } : c
+            c.product.$id == pid ? { ...c, temaxia: parseInt(amount) } : c
           ),
         }));
       }
